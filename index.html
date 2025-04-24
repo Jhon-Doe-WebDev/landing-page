@@ -1,0 +1,226 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&family=Sora:wght@100..800&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" rel="stylesheet"/>
+    <link href="./output.css" rel="stylesheet">
+
+    <style>
+      html {
+        scroll-padding-top: 8rem;
+        font-family: 'Manrope', sans-serif;
+      }
+      h1 {
+        font-family: 'Sora', monospace, sans-serif;
+      }
+    </style>
+  </head>
+
+  <body class="bg-slate-100 text-slate-900 scroll-pt-36" onclick="hideNavMenu(event)">
+    <!-- HEADER -->
+    <header class="h-28 w-full flex justify-between bg-slate-900 text-slate-100 p-4 fixed z-40">
+      <!-- Logo -->
+      <div class="flex items-center">
+        <img class="w-16" src="./logo-dark.png" alt="">
+        <p class="pl-4 text-2xl font-semibold sm:text-3xl md:text-4xl lg:text-5xl"><a href="#hero">WebNest</a></p>
+      </div>
+
+      <!-- Navbar -->
+      <nav class="flex items-center p-4 xl:px-12">
+        <ul class="hidden lg:flex lg:flex-row lg:gap-12">
+          <a href="#about">
+            <li class="text-2xl">Acerca De</li>
+          </a>
+          <a href="#services">
+            <li class="text-2xl">Servicios</li>
+          </a>
+          <a href="#portfolio">
+            <li class="text-2xl">Galería</li>
+          </a>
+          <a href="#contact">
+            <li class="text-2xl">Contáctanos</li>
+          </a>
+        </ul>
+        <img class="w-16 cursor-pointer hover:scale-105 transition lg:hidden" src="./menu.svg" alt="" onclick="toggleNavMenu()" id="toggle-nav-bttn">
+        <div class="bg-slate-900 hidden -translate-x-28 translate-y-48 rounded-xl" id="nav-menu">
+          <ul class="flex flex-col place-items-center text-xl">
+            <a class="w-full h-full first:rounded-t-xl last:rounded-b-xl hover:bg-slate-800 px-8 py-4 text-center transition" href="#about">
+              <li>Acerca de</li>
+            </a>
+            <a class="w-full h-full first:rounded-t-xl last:rounded-b-xl hover:bg-slate-800 px-8 py-4 text-center transition" href="#services">
+              <li>Servicios</li>
+            </a>
+            <a class="w-full h-full first:rounded-t-xl last:rounded-b-xl hover:bg-slate-800 px-8 py-4 text-center transition" href="#portfolio">
+              <li>Galería</li>
+            </a>
+            <a class="w-full h-full first:rounded-t-xl last:rounded-b-xl hover:bg-slate-800 px-8 py-4 text-center transition" href="#contact">
+              <li>Contáctanos</li>
+            </a>
+          </ul>
+        </div>
+      </nav>
+    </header>
+
+    <!-- BODY -->
+    <main class="group pt-32">
+
+      <!-- Hero section -->
+      <section class="even:bg-slate-200 p-8 flex flex-col items-center gap-4 sm:gap-8 md:gap-12 lg:gap-16 sm:px-20 sm:py-24 md:py-28 lg:py-32" id="hero">
+        <div class="space-y-4 lg:space-y-8">
+          <h1 class="text-center text-7xl font-normal sm:text-8xl lg:text-9xl">WebNest</h1>
+          <p class="text-center text-lg text-slate-600 md:text-xl lg:text-3xl">Transformando grandes ideas en sitios sensacionales</p>
+        </div>
+        <a href="#contact"><button class="bg-teal-600 text-xl px-8 py-4 rounded-2xl text-slate-100 font-bold mt-4 hover:bg-teal-700 focus:outline-none focus:ring-2 focus:ring-teal-700 focus:hover:ring-teal-800 active:bg-teal-800 active:focus:ring-teal-900 transition md:text-2xl md:px-12 md:py-6 lg:text-3xl lg:px-16 lg:py-8">Contactanos!</button></a>
+      </section>
+
+      <!-- About -->
+      <section class="even:bg-slate-200 p-12 space-y-8 sm:p-20 md:space-y-12 lg:p-28 lg:space-y-16" id="about">
+        <h1 class="text-center text-4xl font-semibold sm:text-5xl lg:text-6xl">Quiénes somos?</h1>
+        <p class="text-lg text-slate-600 sm:text-xl md:text-2xl lg:text-3xl" >WebNest es una compañía de desarrollo web, dedicada a la creación de sitios ligeros y adaptables. Nuestro trabajo es proporcionar sitios, tanto personales como empresariales, de manera que sean fácilmente accesibles desde cualquier parte del mundo y en cualquier dispositivo. Si quieres un sitio, WebNest es tu solución!</p>
+      </section>
+
+      <!-- Services -->
+      <section class="even:bg-slate-200 p-14 space-y-12 sm:p-16 sm:space-y-16" id="services">
+        <h1 class="text-center text-4xl font-semibold sm:text-5xl lg:text-6xl">Servicios</h1>
+        <p class="text-lg sm:text-xl md:text-2xl lg:text-3xl text-center text-slate-600">WebNest se dedica a la creacion tanto de <span class="font-bold text-slate-800">sitios personales</span> como <span class="font-bold text-slate-800">empresariales</span>. Ya sea un blog personal para mantener informados a tus seguidores, como una página informativa para dar a conocer tu negocio a los demás, o un catálogo donde muestres tus más recientes productos, <span class="font-bold text-slate-800">WebNest se adapta a tus necesidades</span> para proveerte un sitio único y profesional. Junto con la creación de sitios web, <span class="font-bold text-slate-800">ofrecemos las siguientes funcionalidades</span>: 
+        </p>
+        <ul class="list-disc marker:text-2xl space-y-4 pl-4 sm:space-y-8 md:list-none md:grid md:grid-cols-2 md:space-y-0 md:gap-6 md:p-4 lg:p-0 lg:grid lg:grid-cols-3">
+          <li class="pl-2 pb-2 space-y-2 sm:space-y-4 md:p-8 md:rounded-2xl md:shadow-sm md:shadow-slate-600 lg:p-12">
+            <h1 class="text-2xl sm:text-3xl lg:text-4xl md:font-semibold pb-4 md:flex md:flex-row md:gap-4 md:items-center">
+              <img class="w-8 h-8 hidden md:block" src="./draw.svg" alt="">
+              Diseños Modernos
+            </h1>
+            <p class="text-slate-600 sm:text-lg md:text-slate-600  md:text-xl lg:text-2xl">Paginas personalizadas a gusto utilizando <span class="font-bold text-slate-800">tecnologias modernas</span></p>
+          </li>
+          <li class="pl-2 pb-2 space-y-2 sm:space-y-4 md:p-8 md:rounded-2xl md:shadow-sm md:shadow-slate-600 lg:p-12">
+            <h1 class="text-2xl sm:text-3xl lg:text-4xl md:font-semibold pb-4 md:flex md:flex-row md:gap-4 md:items-center">
+              <img class="w-8 h-8 hidden md:block" src="./devices.svg" alt="">
+              Diseño Adaptable
+            </h1>
+            <p class="text-slate-600 sm:text-lg md:text-slate-600  md:text-xl lg:text-2xl">Sitios esteticos y funcionales para <span class="font-bold text-slate-800">cualquier tamaño de pantalla</span></p>
+          </li>
+          <li class="pl-2 pb-2 space-y-2 sm:space-y-4 md:p-8 md:rounded-2xl md:shadow-sm md:shadow-slate-600 lg:p-12">
+            <h1 class="text-2xl sm:text-3xl lg:text-4xl md:font-semibold pb-4 md:flex md:flex-row md:gap-4 md:items-center">
+              <img class="w-8 h-8 hidden md:block" src="./explorer.svg" alt="">
+              SEO
+            </h1>
+            <p class="text-slate-600 sm:text-lg md:text-slate-600  md:text-xl lg:text-2xl"><span class="font-bold text-slate-800">Optimizacion</span> para los multiples <span class="font-bold text-slate-800">motores de busqueda</span></p>
+          </li>
+          <li class="pl-2 pb-2 space-y-2 sm:space-y-4 md:p-8 md:rounded-2xl md:shadow-sm md:shadow-slate-600 lg:p-12">
+            <h1 class="text-2xl sm:text-3xl lg:text-4xl md:font-semibold pb-4 md:flex md:flex-row md:gap-4 md:items-center">
+              <img class="w-8 h-8 hidden md:block" src="./maintenance.svg" alt="">
+              Mantenimiento
+            </h1>
+            <p class="text-slate-600 sm:text-lg md:text-slate-600  md:text-xl lg:text-2xl">Manten tu sitio constantemente <span class="font-bold text-slate-800">actualizado</span></p>
+          </li>
+        </ul>
+      </section>
+
+      <!-- Portfolio/Gallery -->
+      <section class="even:bg-slate-200 p-8 space-y-14 sm:space-y-20 sm:p-16" id="portfolio">
+        <div class="space-y-6">
+          <h1 class="text-center text-4xl font-semibold sm:text-5xl lg:text-6xl">Galeria</h1>
+          <p class="text-lg text-slate-600 sm:text-xl md:text-2xl lg:text-3xl text-center" > Observa algunos de nuestros trabajos y plantillas</p>
+        </div>
+
+        <div class="max-w-2xl mx-auto mt-10 relative overflow-hidden">
+          <div class="carousel-inner flex">
+              <div class="carousel-item min-w-full">
+                  <img src="./img-1.png" alt="Image 1">
+              </div>
+              <div class="carousel-item min-w-full">
+                  <img src="./img-2.png" alt="Image 2">
+              </div>
+              <div class="carousel-item min-w-full">
+                  <img src="./img-3.png" alt="Image 3">
+              </div>
+          </div>
+          <button class="absolute top-1/2 left-4 transform -translate-y-1/2 bg-white rounded-full shadow p-2" onclick="prevSlide()">
+              &#10094; <!-- Left Arrow -->
+          </button>
+          <button class="absolute top-1/2 right-4 transform -translate-y-1/2 bg-white rounded-full shadow p-2" onclick="nextSlide()">
+              &#10095; <!-- Right Arrow -->
+          </button>
+      </div>
+  
+      
+
+      </section>
+
+      <!-- Contact -->
+      <section class="even:bg-slate-200 p-12 space-y-8 sm:p-16 sm:space-y-12" id="contact">
+        <div class="space-y-4 sm:space-y-6">
+          <h1 class="text-center text-4xl font-semibold sm:text-5xl lg:text-6xl">Contáctanos!</h1>
+          <p class="text-lg text-slate-600 sm:text-xl md:text-2xl lg:text-3xl text-center" > Quieres que creemos un sitio web para tí o para tu empresa? Envíanos un mensaje!</p>
+          <p class="text-lg text-slate-600 sm:text-xl md:text-2xl lg:text-3xl text-center" > Correo: doe.web.dev.2025+lp@gmail.com</p>
+        </div>
+        <form action="mailto:doe.web.dev.2025+lp@gmail.com" class="text-lg font-semibold space-y-2 sm:text-xl sm:space-y-4 lg:space-y-12">
+          <div class="space-y-1 sm:space-y-2">
+            <h1 class="sm:text-lg lg:text-2xl xl:text-3xl">Nombre:</h1>
+            <input class="w-full rounded-md focus:outline-none focus:ring-2 focus:ring-emerald-600 sm:w-3/4 md:w-1/2 lg:h-12" type="text" name="sender-name" id="gmail-sender-name">
+          </div>
+          <div class="space-y-1 sm:space-y-2">
+            <h1 class="sm:text-lg lg:text-2xl xl:text-3xl">Tema:</h1>
+            <input class="w-full rounded-md focus:outline-none focus:ring-2 focus:ring-emerald-600 sm:w-3/4 md:w-1/2 lg:h-12" type="text" name="about" id="gmail-about">
+          </div>
+          <div class="space-y-1 sm:space-y-2">
+            <h1 class="sm:text-lg lg:text-2xl xl:text-3xl">Escríbenos:</h1>
+            <textarea class="w-full rounded-md focus:outline-none focus:ring-2 focus:ring-emerald-600 lg:h-20" name="content" id="gmail-content"></textarea>
+          </div>
+          <div class="flex place-items-center">
+            <input type="submit" class="bg-teal-600 text-xl px-8 py-4 rounded-2xl text-slate-100 font-bold mt-4 hover:bg-teal-700 focus:outline-none focus:ring-2 focus:ring-teal-700 focus:hover:ring-teal-800 active:bg-teal-800 active:focus:ring-teal-900 transition md:text-2xl md:px-12 md:py-6 lg:text-3xl lg:px-16 lg:py-8" value="Mandar Correo"/>
+          </div>
+        </form>
+      </section>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="bg-slate-900 text-slate-300 p-4 grid grid-cols-3 sm:grid-cols-4 items-center ">
+      <p class="text-lg text-center sm:col-start-2 col-span-2">© 2025 WebNest. Todos los derechos reservados</p>
+      <div class="flex flex-row items-center justify-end gap-4 hidden">
+        <!-- Twitter SVG -->
+        <a href="#">
+          <svg class="w-8 fill-sky-400 pr-1" viewBox="0 -2 20 20" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+            <g id="Page-1" stroke="none" stroke-width="1" fill-rule="evenodd">
+              <g id="Dribbble-Light-Preview" transform="translate(-60.000000, -7521.000000)">
+                <g id="icons" transform="translate(56.000000, 160.000000)">
+                  <path d="M10.29,7377 C17.837,7377 21.965,7370.84365 21.965,7365.50546 C21.965,7365.33021 21.965,7365.15595 21.953,7364.98267 C22.756,7364.41163 23.449,7363.70276 24,7362.8915 C23.252,7363.21837 22.457,7363.433 21.644,7363.52751 C22.5,7363.02244 23.141,7362.2289 23.448,7361.2926 C22.642,7361.76321 21.761,7362.095 20.842,7362.27321 C19.288,7360.64674 16.689,7360.56798 15.036,7362.09796 C13.971,7363.08447 13.518,7364.55538 13.849,7365.95835 C10.55,7365.79492 7.476,7364.261 5.392,7361.73762 C4.303,7363.58363 4.86,7365.94457 6.663,7367.12996 C6.01,7367.11125 5.371,7366.93797 4.8,7366.62489 L4.8,7366.67608 C4.801,7368.5989 6.178,7370.2549 8.092,7370.63591 C7.488,7370.79836 6.854,7370.82199 6.24,7370.70483 C6.777,7372.35099 8.318,7373.47829 10.073,7373.51078 C8.62,7374.63513 6.825,7375.24554 4.977,7375.24358 C4.651,7375.24259 4.325,7375.22388 4,7375.18549 C5.877,7376.37088 8.06,7377 10.29,7376.99705"></path>
+                </g>
+              </g>
+            </g>
+          </svg>
+        </a>
+        <!-- Whatsapp SVG -->
+        <a href="#">
+          <svg class=" w-8 fill-teal-600" viewBox="0 0 20 20" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+            <g id="Page-1" stroke="none" stroke-width="1" fill-rule="evenodd">
+              <g id="Dribbble-Light-Preview" transform="translate(-300.000000, -7599.000000)">
+                <g id="icons" transform="translate(56.000000, 160.000000)">
+                  <path d="M259.821,7453.12124 C259.58,7453.80344 258.622,7454.36761 257.858,7454.53266 C257.335,7454.64369 256.653,7454.73172 254.355,7453.77943 C251.774,7452.71011 248.19,7448.90097 248.19,7446.36621 C248.19,7445.07582 248.934,7443.57337 250.235,7443.57337 C250.861,7443.57337 250.999,7443.58538 251.205,7444.07952 C251.446,7444.6617 252.034,7446.09613 252.104,7446.24317 C252.393,7446.84635 251.81,7447.19946 251.387,7447.72462 C251.252,7447.88266 251.099,7448.05372 251.27,7448.3478 C251.44,7448.63589 252.028,7449.59418 252.892,7450.36341 C254.008,7451.35771 254.913,7451.6748 255.237,7451.80984 C255.478,7451.90987 255.766,7451.88687 255.942,7451.69881 C256.165,7451.45774 256.442,7451.05762 256.724,7450.6635 C256.923,7450.38141 257.176,7450.3464 257.441,7450.44643 C257.62,7450.50845 259.895,7451.56477 259.991,7451.73382 C260.062,7451.85686 260.062,7452.43903 259.821,7453.12124 M254.002,7439 L253.997,7439 L253.997,7439 C248.484,7439 244,7443.48535 244,7449 C244,7451.18666 244.705,7453.21526 245.904,7454.86076 L244.658,7458.57687 L248.501,7457.3485 C250.082,7458.39482 251.969,7459 254.002,7459 C259.515,7459 264,7454.51465 264,7449 C264,7443.48535 259.515,7439 254.002,7439"></path>
+                </g>
+              </g>
+            </g>
+          </svg>
+        </a>
+        <!-- Telegram SVG -->
+        <a href="#">
+          <svg class="w-10 fill-sky-600" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 24 24" xml:space="preserve">
+            <style type="text/css">
+              .st0{fill:none;}
+            </style>
+            <path d="M12,2C6.5,2,2,6.5,2,12s4.5,10,10,10s10-4.5,10-10S17.5,2,12,2z M16.9,8.1l-1.7,8.2c-0.1,0.6-0.5,0.7-0.9,0.4l-2.6-2
+              c-0.6,0.6-1.2,1.1-1.3,1.3c-0.2,0.1-0.3,0.3-0.5,0.3c-0.3,0-0.3-0.2-0.4-0.4l-0.9-3L5.9,12c-0.6-0.2-0.6-0.6,0.1-0.9l10.2-3.9
+              C16.6,7.1,17.1,7.3,16.9,8.1z M14.5,9l-5.7,3.6l0.9,3l0.2-2l4.9-4.4C15.1,8.9,14.9,8.9,14.5,9z"/>
+            <rect class="st0" width="24" height="24"/>
+          </svg>
+        </a>
+      </div>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="app.js"></script>
+  </body> 
+  </html>
