@@ -7,7 +7,8 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&family=Sora:wght@100..800&display=swap" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" rel="stylesheet"/>
-    <link href="./output.css" rel="stylesheet">
+    <link rel="stylesheet" href="./output.css">
+    <link rel="stylesheet" href="./animate.css">
 
     <style>
       html {
@@ -17,6 +18,11 @@
       h1 {
         font-family: 'Sora', monospace, sans-serif;
       }
+
+      .fadeInUp {
+        animation: fadeInUp 2s forwards;
+      }
+
     </style>
   </head>
 
@@ -25,7 +31,7 @@
     <header class="h-28 w-full flex justify-between bg-slate-900 text-slate-100 p-4 fixed z-40">
       <!-- Logo -->
       <div class="flex items-center">
-        <img class="w-16" src="./images/logo-dark.png" alt="">
+        <img class="w-16" src="./logo-dark.png" alt="">
         <p class="pl-4 text-2xl font-semibold sm:text-3xl md:text-4xl lg:text-5xl"><a href="#hero">WebNest</a></p>
       </div>
 
@@ -33,32 +39,56 @@
       <nav class="flex items-center p-4 xl:px-12">
         <ul class="hidden lg:flex lg:flex-row lg:gap-12">
           <a href="#about">
-            <li class="text-2xl">Acerca De</li>
+            <li class="text-2xl">
+              <span class="lang-es">Acerca De</span>
+              <span class="lang-en hidden">About</span>
+            </li>
           </a>
           <a href="#services">
-            <li class="text-2xl">Servicios</li>
+            <li class="text-2xl">
+              <span class="lang-es">Servicios</span>
+              <span class="lang-en hidden">Services</span>
+            </li>
           </a>
           <a href="#portfolio">
-            <li class="text-2xl">Galería</li>
+            <li class="text-2xl">
+              <span class="lang-es">Galería</span>
+              <span class="lang-en hidden">Gallery</span>
+            </li>
           </a>
           <a href="#contact">
-            <li class="text-2xl">Contáctanos</li>
+            <li class="text-2xl">
+              <span class="lang-es">Contáctanos</span>
+              <span class="lang-en hidden">Contact</span>
+            </li>
           </a>
         </ul>
-        <img class="w-16 cursor-pointer hover:scale-105 transition lg:hidden" src="./images/menu.svg" alt="" onclick="toggleNavMenu()" id="toggle-nav-bttn">
+        <img class="w-16 cursor-pointer hover:scale-105 transition lg:hidden" src="./menu.svg" alt="" onclick="toggleNavMenu()" id="toggle-nav-bttn">
         <div class="bg-slate-900 hidden -translate-x-28 translate-y-48 rounded-xl" id="nav-menu">
           <ul class="flex flex-col place-items-center text-xl">
             <a class="w-full h-full first:rounded-t-xl last:rounded-b-xl hover:bg-slate-800 px-8 py-4 text-center transition" href="#about">
-              <li>Acerca de</li>
+              <li>
+                <span class="lang-es">Acerca de</span>
+                <span class="lang-en hidden">About</span>
+              </li>
             </a>
             <a class="w-full h-full first:rounded-t-xl last:rounded-b-xl hover:bg-slate-800 px-8 py-4 text-center transition" href="#services">
-              <li>Servicios</li>
+              <li>
+                <span class="lang-es">Servicios</span>
+                <span class="lang-en hidden">Services</span>
+              </li>
             </a>
             <a class="w-full h-full first:rounded-t-xl last:rounded-b-xl hover:bg-slate-800 px-8 py-4 text-center transition" href="#portfolio">
-              <li>Galería</li>
+              <li>
+                <span class="lang-es">Galería</span>
+                <span class="lang-en hidden">Gallery</span>
+              </li>
             </a>
             <a class="w-full h-full first:rounded-t-xl last:rounded-b-xl hover:bg-slate-800 px-8 py-4 text-center transition" href="#contact">
-              <li>Contáctanos</li>
+              <li>
+                <span class="lang-es">Contáctanos</span>
+                <span class="lang-en hidden">Contact</span>
+              </li>
             </a>
           </ul>
         </div>
@@ -69,74 +99,113 @@
     <main class="group pt-32">
 
       <!-- Hero section -->
-      <section class="even:bg-slate-200 p-8 flex flex-col items-center gap-4 sm:gap-8 md:gap-12 lg:gap-16 sm:px-20 sm:py-24 md:py-28 lg:py-32" id="hero">
-        <div class="space-y-4 lg:space-y-8">
+      <section class="even:bg-slate-200 p-8 flex flex-col items-center gap-4 sm:gap-8 md:gap-12 lg:gap-16 sm:px-20 sm:py-24 md:py-28 lg:py-32 lg:h-svh" id="hero">
+        <div class="space-y-4 lg:space-y-8 opacity-0 animated">
           <h1 class="text-center text-7xl font-normal sm:text-8xl lg:text-9xl">WebNest</h1>
-          <p class="text-center text-lg text-slate-600 md:text-xl lg:text-3xl">Transformando grandes ideas en sitios sensacionales</p>
+          <p class="text-center text-lg text-slate-600 md:text-xl lg:text-3xl">
+            <span class="lang-es">Transformando grandes ideas en sitios sensacionales</span>
+            <span class="lang-en hidden">Making great ideas into greater sites</span>
+          </p>
         </div>
-        <a href="#contact"><button class="bg-teal-600 text-xl px-8 py-4 rounded-2xl text-slate-100 font-bold mt-4 hover:bg-teal-700 focus:outline-none focus:ring-2 focus:ring-teal-700 focus:hover:ring-teal-800 active:bg-teal-800 active:focus:ring-teal-900 transition md:text-2xl md:px-12 md:py-6 lg:text-3xl lg:px-16 lg:py-8">Contactanos!</button></a>
+        <a href="#contact"><button class="bg-teal-600 text-xl px-8 py-4 rounded-2xl text-slate-100 font-bold mt-4 hover:bg-teal-700 focus:outline-none focus:ring-2 focus:ring-teal-700 focus:hover:ring-teal-800 active:bg-teal-800 active:focus:ring-teal-900 transition md:text-2xl md:px-12 md:py-6 lg:text-3xl lg:px-16 lg:py-8">
+          <span class="lang-es">Contactanos!</span>
+          <span class="lang-en hidden">Contact us!</span>
+        </button></a>
       </section>
 
       <!-- About -->
-      <section class="even:bg-slate-200 p-12 space-y-8 sm:p-20 md:space-y-12 lg:p-28 lg:space-y-16" id="about">
-        <h1 class="text-center text-4xl font-semibold sm:text-5xl lg:text-6xl">Quiénes somos?</h1>
-        <p class="text-lg text-slate-600 sm:text-xl md:text-2xl lg:text-3xl" >WebNest es una compañía de desarrollo web, dedicada a la creación de sitios ligeros y adaptables. Nuestro trabajo es proporcionar sitios, tanto personales como empresariales, de manera que sean fácilmente accesibles desde cualquier parte del mundo y en cualquier dispositivo. Si quieres un sitio, WebNest es tu solución!</p>
+      <section class="even:bg-slate-200 p-12 sm:p-20 md:space-y-12 lg:p-40 lg:h-svh lg:grid lg:grid-cols-1 place-items-center opacity-0 animated" id="about">
+        <div class="space-y-8 lg:space-y-20">
+          <h1 class="text-center text-4xl font-semibold sm:text-5xl">
+            <span class="lang-es">Quiénes somos?</span>
+            <span class="lang-en hidden">About Us</span>
+          </h1>
+          <p class="text-lg text-slate-600 sm:text-xl md:text-2xl lg:px-20">
+            <span class="lang-es">WebNest es una compañía de desarrollo web, dedicada a la creación de sitios ligeros y modernos. Nuestro trabajo es proporcionar sitios, tanto personales como empresariales, de manera que sean fácilmente accesibles desde cualquier parte del mundo y en cualquier dispositivo. Si quieres un sitio, WebNest es tu solución!</span>
+            <span class="lang-en hidden">WebNest is a web development company, focused on the creation of lightweight and modern websites. Our job is to provide our clients, both people and businesses, with attractive, easily accesible sites, achieving web visibility. If you want a site, WebNest is your solution!</span>
+          </p>
+        </div>
       </section>
 
       <!-- Services -->
-      <section class="even:bg-slate-200 p-14 space-y-12 sm:p-16 sm:space-y-16" id="services">
-        <h1 class="text-center text-4xl font-semibold sm:text-5xl lg:text-6xl">Servicios</h1>
-        <p class="text-lg sm:text-xl md:text-2xl lg:text-3xl text-center text-slate-600">WebNest se dedica a la creacion tanto de <span class="font-bold text-slate-800">sitios personales</span> como <span class="font-bold text-slate-800">empresariales</span>. Ya sea un blog personal para mantener informados a tus seguidores, como una página informativa para dar a conocer tu negocio a los demás, o un catálogo donde muestres tus más recientes productos, <span class="font-bold text-slate-800">WebNest se adapta a tus necesidades</span> para proveerte un sitio único y profesional. Junto con la creación de sitios web, <span class="font-bold text-slate-800">ofrecemos las siguientes funcionalidades</span>: 
-        </p>
-        <ul class="list-disc marker:text-2xl space-y-4 pl-4 sm:space-y-8 md:list-none md:grid md:grid-cols-2 md:space-y-0 md:gap-6 md:p-4 lg:p-0 lg:grid lg:grid-cols-3">
-          <li class="pl-2 pb-2 space-y-2 sm:space-y-4 md:p-8 md:rounded-2xl md:shadow-sm md:shadow-slate-600 lg:p-12">
-            <h1 class="text-2xl sm:text-3xl lg:text-4xl md:font-semibold pb-4 md:flex md:flex-row md:gap-4 md:items-center">
-              <img class="w-8 h-8 hidden md:block" src="./images/draw.svg" alt="">
-              Diseños Modernos
-            </h1>
-            <p class="text-slate-600 sm:text-lg md:text-slate-600  md:text-xl lg:text-2xl">Paginas personalizadas a gusto utilizando <span class="font-bold text-slate-800">tecnologias modernas</span></p>
-          </li>
-          <li class="pl-2 pb-2 space-y-2 sm:space-y-4 md:p-8 md:rounded-2xl md:shadow-sm md:shadow-slate-600 lg:p-12">
-            <h1 class="text-2xl sm:text-3xl lg:text-4xl md:font-semibold pb-4 md:flex md:flex-row md:gap-4 md:items-center">
-              <img class="w-8 h-8 hidden md:block" src="./images/devices.svg" alt="">
-              Diseño Adaptable
-            </h1>
-            <p class="text-slate-600 sm:text-lg md:text-slate-600  md:text-xl lg:text-2xl">Sitios esteticos y funcionales para <span class="font-bold text-slate-800">cualquier tamaño de pantalla</span></p>
-          </li>
-          <li class="pl-2 pb-2 space-y-2 sm:space-y-4 md:p-8 md:rounded-2xl md:shadow-sm md:shadow-slate-600 lg:p-12">
-            <h1 class="text-2xl sm:text-3xl lg:text-4xl md:font-semibold pb-4 md:flex md:flex-row md:gap-4 md:items-center">
-              <img class="w-8 h-8 hidden md:block" src="./images/explorer.svg" alt="">
-              SEO
-            </h1>
-            <p class="text-slate-600 sm:text-lg md:text-slate-600  md:text-xl lg:text-2xl"><span class="font-bold text-slate-800">Optimizacion</span> para los multiples <span class="font-bold text-slate-800">motores de busqueda</span></p>
-          </li>
-          <li class="pl-2 pb-2 space-y-2 sm:space-y-4 md:p-8 md:rounded-2xl md:shadow-sm md:shadow-slate-600 lg:p-12">
-            <h1 class="text-2xl sm:text-3xl lg:text-4xl md:font-semibold pb-4 md:flex md:flex-row md:gap-4 md:items-center">
-              <img class="w-8 h-8 hidden md:block" src="./images/maintenance.svg" alt="">
-              Mantenimiento
-            </h1>
-            <p class="text-slate-600 sm:text-lg md:text-slate-600  md:text-xl lg:text-2xl">Manten tu sitio constantemente <span class="font-bold text-slate-800">actualizado</span></p>
-          </li>
-        </ul>
+      <section class="even:bg-slate-200 p-14 space-y-12 sm:p-16 sm:space-y-16 lg:h-svh opacity-0 animated" id="services">
+          <h1 class="text-center text-4xl font-semibold sm:text-5xl">
+            <span class="lang-es">Servicios</span>
+            <span class="lang-en hidden">Services</span>
+          </h1>
+          <p class="text-lg sm:text-xl md:text-2xl text-center text-slate-600"><span class="lang-es">WebNest se dedica a la creacion de <span class="font-bold text-slate-800">paginas web</span> tanto sencillas como complejas. <span class="font-bold text-slate-800">Blogs personales</span> para mantener actualizados a tus seguidores, <span class="font-bold text-slate-800">Sitios web informativos</span> para dar a conocer tu negocio, <span class="font-bold text-slate-800">Catalogos de productos</span> para resaltar tus productos estrella: <span class="font-bold text-slate-800">WebNest se adapta a tus necesidades</span> para proveer un sitio ligero y profesional. Junto con la creación de sitios web, <span class="font-bold text-slate-800">ofrecemos las siguientes funcionalidades</span>
+          </span><span class="lang-en hidden">WebNest handles the creation of <span class="font-bold text-slate-800">websites</span>, both simple and complex. <span class="font-bold text-slate-800">Personal blogs</span> to keep your followers updated, <span class="font-bold text-slate-800">Landing pages</span> to promote your business, <span class="font-bold text-slate-800">Product catalogues</span> to showcase your merchandise: WebNest can do it all. Our services include the following <span class="font-bold text-slate-800">features</span></span>: 
+          </p>
+          <ul class="list-disc marker:text-2xl space-y-4 pl-4 sm:space-y-8 md:list-none md:grid md:grid-cols-2 md:space-y-0 md:gap-6 md:p-4 lg:p-0 lg:grid lg:grid-cols-4">
+            <li class="pl-2 pb-2 space-y-2 sm:space-y-4 md:p-8 md:rounded-2xl md:shadow-sm md:shadow-slate-600 lg:p-8">
+              <h1 class="text-2xl sm:text-3xl lg:text-2xl md:font-semibold pb-4 md:flex md:flex-row md:gap-4 md:items-center">
+                <img class="w-8 h-8 hidden md:block" src="./draw.svg" alt="">
+                <span class="lang-es">Diseños Modernos</span>
+                <span class="lang-en hidden">Modern Design</span>
+              </h1>
+              <p class="text-slate-600 sm:text-lg md:text-slate-600  md:text-xl">
+                <span class="lang-es">Paginas personalizadas a gusto utilizando <span class="font-bold text-slate-800">tecnologias modernas</span></span>
+                <span class="lang-en hidden">Personalized websites using <span class="font-bold text-slate-800">modern technologies</span></span>
+              </p>
+            </li>
+            <li class="pl-2 pb-2 space-y-2 sm:space-y-4 md:p-8 md:rounded-2xl md:shadow-sm md:shadow-slate-600 lg:p-8">
+              <h1 class="text-2xl sm:text-3xl lg:text-2xl md:font-semibold pb-4 md:flex md:flex-row md:gap-4 md:items-center">
+                <img class="w-8 h-8 hidden md:block" src="./devices.svg" alt="">
+                <span class="lang-es">Diseño Adaptable</span>
+                <span class="lang-en hidden">Responsive Design</span>
+              </h1>
+              <p class="text-slate-600 sm:text-lg md:text-slate-600  md:text-xl">
+                <span class="lang-es">Sitios esteticos y funcionales para <span class="font-bold text-slate-800">cualquier tamaño de pantalla</span></span>
+                <span class="lang-en hidden"><span class="font-bold text-slate-800">Mobile-friendly</span> websites for better visibility</span>
+              </p>
+            </li>
+            <li class="pl-2 pb-2 space-y-2 sm:space-y-4 md:p-8 md:rounded-2xl md:shadow-sm md:shadow-slate-600 lg:p-8">
+              <h1 class="text-2xl sm:text-3xl lg:text-2xl md:font-semibold pb-4 md:flex md:flex-row md:gap-4 md:items-center">
+                <img class="w-8 h-8 hidden md:block" src="./explorer.svg" alt="">
+                SEO
+              </h1>
+              <p class="text-slate-600 sm:text-lg md:text-slate-600  md:text-xl">
+                <span class="lang-es"><span class="font-bold text-slate-800">Optimizacion</span> para los multiples <span class="font-bold text-slate-800">motores de busqueda</span></span>
+                <span class="lang-en hidden">Optimization</span> for multiple <span class="font-bold text-slate-800">search engines</span></span>
+              </p>
+            </li>
+            <li class="pl-2 pb-2 space-y-2 sm:space-y-4 md:p-8 md:rounded-2xl md:shadow-sm md:shadow-slate-600 lg:p-8">
+              <h1 class="text-2xl sm:text-3xl lg:text-2xl md:font-semibold pb-4 md:flex md:flex-row md:gap-4 md:items-center">
+                <img class="w-8 h-8 hidden md:block" src="./maintenance.svg" alt="">
+                <span class="lang-es">Sostenibilidad</span>
+                <span class="lang-en hidden">Sustainability</span>
+              </h1>
+              <p class="text-slate-600 sm:text-lg md:text-slate-600  md:text-xl">
+                <span class="lang-es">Sitios sostenibles y <span class="font-bold text-slate-800">escalables</span></span>
+                <span class="lang-en hidden">Sustainable and <span class="font-bold text-slate-800">scalable</span> websites</span>
+              </p>
+            </li>
+          </ul>
       </section>
 
       <!-- Portfolio/Gallery -->
-      <section class="even:bg-slate-200 p-8 space-y-14 sm:space-y-20 sm:p-16" id="portfolio">
+      <section class="even:bg-slate-200 p-8 space-y-14 sm:space-y-20 sm:p-16 lg:h-svh opacity-0 animated" id="portfolio">
         <div class="space-y-6">
-          <h1 class="text-center text-4xl font-semibold sm:text-5xl lg:text-6xl">Galeria</h1>
-          <p class="text-lg text-slate-600 sm:text-xl md:text-2xl lg:text-3xl text-center" > Observa algunos de nuestros trabajos y plantillas</p>
+          <h1 class="text-center text-4xl font-semibold sm:text-5xl">
+            <span class="lang-es">Galeria</span>
+            <span class="lang-en hidden">Gallery</span>
+          </h1>
+          <p class="text-lg text-slate-600 sm:text-xl md:text-2xl text-center">
+            <span class="lang-es">Observa algunas de las plantillas de WebNest</span>
+            <span class="lang-en hidden">Have a look at some of our standard templates</span>
+          </p>
         </div>
 
         <div class="max-w-2xl mx-auto mt-10 relative overflow-hidden">
           <div class="carousel-inner flex">
               <div class="carousel-item min-w-full">
-                  <img src="./images/img-1.png" alt="Image 1">
+                  <img src="./img-1.png" alt="Image 1">
               </div>
               <div class="carousel-item min-w-full">
-                  <img src="./images/img-2.png" alt="Image 2">
+                  <img src="./img-2.png" alt="Image 2">
               </div>
               <div class="carousel-item min-w-full">
-                  <img src="./images/img-3.png" alt="Image 3">
+                  <img src="./img-3.png" alt="Image 3">
               </div>
           </div>
           <button class="absolute top-1/2 left-4 transform -translate-y-1/2 bg-white rounded-full shadow p-2" onclick="prevSlide()">
@@ -152,35 +221,56 @@
       </section>
 
       <!-- Contact -->
-      <section class="even:bg-slate-200 p-12 space-y-8 sm:p-16 sm:space-y-12" id="contact">
+      <section class="even:bg-slate-200 p-12 space-y-8 sm:p-16 lg:h-svh opacity-0 animated" id="contact">
         <div class="space-y-4 sm:space-y-6">
-          <h1 class="text-center text-4xl font-semibold sm:text-5xl lg:text-6xl">Contáctanos!</h1>
-          <p class="text-lg text-slate-600 sm:text-xl md:text-2xl lg:text-3xl text-center" > Quieres que creemos un sitio web para tí o para tu empresa? Envíanos un mensaje!</p>
-          <p class="text-lg text-slate-600 sm:text-xl md:text-2xl lg:text-3xl text-center" > Correo: doe.web.dev.2025+lp@gmail.com</p>
+          <h1 class="text-center text-4xl font-semibold sm:text-5xl">
+            <span class="lang-es">Contáctanos!</span>
+            <span class="lang-en hidden">Contact us</span>
+          </h1>
+          <div class="lg:space-y-2">
+            <p class="text-lg text-slate-600 sm:text-xl md:text-2xl text-center">
+              <span class="lang-es">Estas interesado en alguno de estos servicios? Envía un correo a: <span class="font-bold text-slate-800">doe.web.dev.2025@gmail.com</span></span>
+              <span class="lang-en hidden">Interested in hiring our services? Send us a mail at: <span class="font-bold text-slate-800">doe.web.dev.2025@gmail.com</span></span>
+            </p>
+          </div>
         </div>
-        <form action="mailto:doe.web.dev.2025+lp@gmail.com" class="text-lg font-semibold space-y-2 sm:text-xl sm:space-y-4 lg:space-y-12">
-          <div class="space-y-1 sm:space-y-2">
-            <h1 class="sm:text-lg lg:text-2xl xl:text-3xl">Nombre:</h1>
-            <input class="w-full rounded-md focus:outline-none focus:ring-2 focus:ring-emerald-600 sm:w-3/4 md:w-1/2 lg:h-12" type="text" name="sender-name" id="gmail-sender-name">
-          </div>
-          <div class="space-y-1 sm:space-y-2">
-            <h1 class="sm:text-lg lg:text-2xl xl:text-3xl">Tema:</h1>
-            <input class="w-full rounded-md focus:outline-none focus:ring-2 focus:ring-emerald-600 sm:w-3/4 md:w-1/2 lg:h-12" type="text" name="about" id="gmail-about">
-          </div>
-          <div class="space-y-1 sm:space-y-2">
-            <h1 class="sm:text-lg lg:text-2xl xl:text-3xl">Escríbenos:</h1>
-            <textarea class="w-full rounded-md focus:outline-none focus:ring-2 focus:ring-emerald-600 lg:h-20" name="content" id="gmail-content"></textarea>
-          </div>
-          <div class="flex place-items-center">
-            <input type="submit" class="bg-teal-600 text-xl px-8 py-4 rounded-2xl text-slate-100 font-bold mt-4 hover:bg-teal-700 focus:outline-none focus:ring-2 focus:ring-teal-700 focus:hover:ring-teal-800 active:bg-teal-800 active:focus:ring-teal-900 transition md:text-2xl md:px-12 md:py-6 lg:text-3xl lg:px-16 lg:py-8" value="Mandar Correo"/>
-          </div>
-        </form>
+        <div class="grid grid-cols-4">
+          <form class="text-lg font-semibold space-y-2 sm:text-xl sm:space-y-4 col-start-2 col-span-2" id="contact-form">
+            <div class="space-y-1 sm:space-y-2">
+              <h1 class="sm:text-xl lg:text-2xl">
+                <span class="lang-es">Nombre:</span>
+                <span class="lang-en hidden">Name:</span>
+              </h1>
+              <input class="w-full rounded-md focus:outline-none focus:ring-2 focus:ring-emerald-600 p-2" type="text" name="sender-name" id="gmail-sender-name" required>
+            </div>
+            <div class="space-y-1 sm:space-y-2">
+              <h1 class="sm:text-xl lg:text-2xl">
+                <span class="lang-es">Tema:</span>
+                <span class="lang-en hidden">Subject:</span>
+              </h1>
+              <input class="w-full rounded-md focus:outline-none focus:ring-2 focus:ring-emerald-600 p-2" type="text" name="about" id="gmail-about" required>
+            </div>
+            <div class="space-y-1 sm:space-y-2">
+              <h1 class="sm:text-xl lg:text-2xl">
+                <span class="lang-es">Mensaje:</span>
+                <span class="lang-en hidden">Message:</span>
+              </h1>
+              <textarea class="w-full rounded-md focus:outline-none focus:ring-2 focus:ring-emerald-600 lg:h-28 p-2" name="content" id="gmail-content" required></textarea>
+            </div>
+            <div class="grid place-items-center">
+              <input type="submit" class="bg-teal-600 text-xl px-8 py-4 rounded-2xl text-slate-100 font-bold mt-4 hover:bg-teal-700 focus:outline-none focus:ring-2 focus:ring-teal-700 focus:hover:ring-teal-800 active:bg-teal-800 active:focus:ring-teal-900 transition md:text-2xl md:px-12 md:py-6 lg:text-xl lg:px-12 lg:py-6" value=""/>
+            </div>
+          </form>
+        </div>
       </section>
     </main>
 
     <!-- FOOTER -->
-    <footer class="bg-slate-900 text-slate-300 p-4 grid grid-cols-3 sm:grid-cols-4 items-center ">
-      <p class="text-lg text-center sm:col-start-2 col-span-2">© 2025 WebNest. Todos los derechos reservados</p>
+    <footer class="bg-slate-900 text-slate-300 p-4 grid grid-cols-1 items-center">
+      <p class="text-lg text-center">© 2025 WebNest. 
+        <span class="lang-es">Todos los derechos reservados</span>
+        <span class="lang-en hidden">All rights reserved.</span>
+      </p>
       <div class="flex flex-row items-center justify-end gap-4 hidden">
         <!-- Twitter SVG -->
         <a href="#">
@@ -220,7 +310,12 @@
         </a>
       </div>
     </footer>
+
+    <button id="goTopBtn" class="fixed size-12 bottom-4 right-4 bg-teal-600 text-white p-2 rounded-xl shadow-lg hidden">
+      <div>↑</div>
+    </button>
+
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <script src="app.js"></script>
   </body> 
-  </html>
+</html>
