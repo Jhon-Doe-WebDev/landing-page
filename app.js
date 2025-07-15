@@ -81,23 +81,11 @@ const animateOnScroll = (entries, observer) => {
 };
 
 const observer = new IntersectionObserver(animateOnScroll, {
-    threshold: 0.3
+    threshold: 0.2
 });
 
 const animateBoxes = document.querySelectorAll('.animated');
 
 animateBoxes.forEach(box => {
     observer.observe(box);  
-});
-
-document.getElementById("contact-form").addEventListener("submit", function(event) {
-    event.preventDefault();
-
-    const name = encodeURIComponent(document.getElementById("gmail-sender-name").value);
-    const about = encodeURIComponent(document.getElementById("gmail-about").value);
-    const content = encodeURIComponent(document.getElementById("gmail-content").value);
-
-    const mailtoLink = `mailto:your-email@example.com?subject=${about}&body=Name: ${name}%0D%0AMessage: ${content}`;
-
-    window.location.href = mailtoLink;
 });
