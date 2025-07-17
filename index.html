@@ -1,0 +1,492 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&family=Sora:wght@100..800&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" rel="stylesheet"/>
+    <link rel="stylesheet" href="./styles.css">
+    <link rel="stylesheet" href="./animate.css">
+
+    <style>
+      html {
+        scroll-padding-top: 7rem;
+        font-family: 'Manrope', sans-serif;
+      }
+      h1 {
+        font-family: 'Sora', monospace, sans-serif;
+      }
+
+      .fadeInUp {
+        animation: fadeInUp 2s forwards;
+      }
+
+    </style>
+  </head>
+
+  <body class="bg-slate-100 text-slate-900 scroll-pt-36" onclick="hideNavMenu(event)">
+    <!-- HEADER -->
+    <header class="h-28 w-full flex justify-between bg-slate-900 text-slate-100 p-4 fixed z-40 drop-shadow-2xl shadow-black">
+      <!-- Logo -->
+      <div class="flex items-center">
+        <img class="w-16" src="./images/logo-dark.png" alt="">
+        <p class="pl-4 text-2xl font-semibold sm:text-3xl md:text-4xl lg:text-5xl"><a href="#hero">LineForge</a></p>
+      </div>
+
+      <!-- Navbar -->
+      <nav class="flex items-center p-4 xl:px-12">
+        <ul class="hidden lg:flex lg:flex-row lg:gap-12">
+          <a href="#about">
+            <li class="text-2xl">
+              <span class="lang-es">Acerca De</span>
+              <span class="lang-en hidden">About</span>
+            </li>
+          </a>
+          <a href="#services">
+            <li class="text-2xl">
+              <span class="lang-es">Servicios</span>
+              <span class="lang-en hidden">Services</span>
+            </li>
+          </a>
+          <a href="#portfolio">
+            <li class="text-2xl">
+              <span class="lang-es">Galería</span>
+              <span class="lang-en hidden">Gallery</span>
+            </li>
+          </a>
+          <a href="#contact">
+            <li class="text-2xl">
+              <span class="lang-es">Contáctanos</span>
+              <span class="lang-en hidden">Contact</span>
+            </li>
+          </a>
+        </ul>
+        <img class="w-16 cursor-pointer hover:scale-105 transition lg:hidden" src="./images/menu.svg" alt="" onclick="toggleNavMenu()" id="toggle-nav-bttn">
+        <div class="bg-slate-900 hidden -translate-x-28 translate-y-48 rounded-xl" id="nav-menu">
+          <ul class="flex flex-col place-items-center text-xl">
+            <a class="w-full h-full first:rounded-t-xl last:rounded-b-xl hover:bg-slate-800 px-8 py-4 text-center transition" href="#about">
+              <li>
+                <span class="lang-es">Acerca de</span>
+                <span class="lang-en hidden">About</span>
+              </li>
+            </a>
+            <a class="w-full h-full first:rounded-t-xl last:rounded-b-xl hover:bg-slate-800 px-8 py-4 text-center transition" href="#services">
+              <li>
+                <span class="lang-es">Servicios</span>
+                <span class="lang-en hidden">Services</span>
+              </li>
+            </a>
+            <a class="w-full h-full first:rounded-t-xl last:rounded-b-xl hover:bg-slate-800 px-8 py-4 text-center transition" href="#portfolio">
+              <li>
+                <span class="lang-es">Galería</span>
+                <span class="lang-en hidden">Gallery</span>
+              </li>
+            </a>
+            <a class="w-full h-full first:rounded-t-xl last:rounded-b-xl hover:bg-slate-800 px-8 py-4 text-center transition" href="#contact">
+              <li>
+                <span class="lang-es">Contáctanos</span>
+                <span class="lang-en hidden">Contact</span>
+              </li>
+            </a>
+          </ul>
+        </div>
+      </nav>
+    </header>
+
+    <!-- BODY -->
+    <main class="group">
+
+      <!-- Hero section -->
+      <section class="min-h-screen pt-36 even:bg-slate-200 p-8 flex flex-col items-center justify-center gap-4 sm:gap-8 md:gap-12 lg:gap-16 sm:px-20" id="hero" style="background-image: url(./images/hero-bg.jpg); background-size: cover;">
+        <div class="space-y-4 lg:space-y-8 opacity-0 animated bg-black bg-opacity-70 p-6 sm:p-12 md:p-16 xl:p-20 rounded-2xl lg:rounded-3xl text-white">
+          <h1 class="text-center text-6xl font-normal sm:text-8xl lg:text-9xl">LineForge</h1>
+          <p class="text-center text-lg md:text-xl lg:text-3xl font-light">
+            <span class="lang-es">Sitios de calidad al alcance de todos</span>
+            <span class="lang-en hidden">Quality sites within everyone's reach</span>
+          </p>
+        </div>
+        <a href="#contact"><button class="bg-teal-600 text-xl px-8 py-4 rounded-2xl text-slate-100 font-bold mt-4 hover:bg-teal-700 focus:outline-none focus:ring-2 focus:ring-teal-700 focus:hover:ring-teal-800 active:bg-teal-800 active:focus:ring-teal-900 transition md:text-2xl md:px-12 md:py-6 lg:text-3xl lg:px-16 lg:py-8 drop-shadow-2xl- shadow-black">
+          <span class="lang-es">Contactanos!</span>
+          <span class="lang-en hidden">Contact us!</span>
+        </button></a>
+      </section>
+
+      <!-- About -->
+      <section class="lg:min-h-screen flex flex-col items-center justify-center even:bg-slate-200 p-12 sm:p-20 md:space-y-12 lg:p-40  opacity-0 animated" id="about">
+        <div class="space-y-8 lg:space-y-20">
+          <h1 class="text-center text-4xl font-semibold sm:text-5xl">
+            <span class="lang-es">Quiénes somos?</span>
+            <span class="lang-en hidden">About Us</span>
+          </h1>
+          <p class="text-lg text-slate-600 sm:text-xl md:text-2xl lg:px-20">
+            <span class="lang-es">LineForge es una compañía de desarrollo web dedicada a crear sitios ligeros y modernos, con un enfoque especial en la accesibilidad. Desde páginas sencillas hasta soluciones complejas, transformamos tus ideas en sitios web efectivos de manera rápida y eficiente. Nuestro compromiso es entregar un producto de calidad garantizada que se adapte a tus necesidades. ¡Contáctanos hoy y descubre cómo podemos ayudarte a llevar tu presencia en línea al siguiente nivel!</span>
+            <span class="lang-en hidden">LineForge is a web development company dedicated to creating lightweight and modern websites, with a special focus on accessibility. From simple pages to complex solutions, we transform your ideas into effective websites quickly and efficiently. Our commitment is to deliver a guaranteed quality product that meets your needs. Contact us today and discover how we can help elevate your online presence to the next level!</span>
+          </p>
+        </div>
+      </section>
+
+      <!-- Services -->
+      <section class="lg:min-h-screen even:bg-slate-200 p-14 space-y-16 sm:p-16 sm:space-y-20 opacity-0 animated" id="services">
+        <div class="space-y-6 sm:space-y-10">
+          <h1 class="text-center text-4xl font-semibold sm:text-5xl">
+            <span class="lang-es">Servicios</span>
+            <span class="lang-en hidden">Services</span>
+          </h1>
+          <p class="text-lg sm:text-xl md:text-2xl text-center text-slate-600"><span class="lang-es">Nuestros servicios se pueden clasificar en tres categorías principales</span>
+          <span class="lang-en">Our services can be classified into three broad categories</span></p>
+          <ul class="list-disc marker:text-2xl space-y-6 pl-4 sm:space-y-10 md:list-none md:grid md:grid-cols-3 md:space-y-0 md:gap-6 md:p-4 md:space-x-4">
+            <li class="md:bg-slate-100 md:rounded-2xl md:shadow-2xl shadow-slate-900 md:hover:scale-105 transition">
+              <h1 class="text-2xl sm:text-3xl lg:text-2xl font-semibold pb-4 md:w-full md:p-4 md:bg-slate-900 md:text-slate-100 md:rounded-t-2xl">
+                <span class="lang-es">Páginas Web</span>
+                <span class="lang-en">Webpages</span>
+              </h1>
+              <p class="text-slate-600 sm:text-lg md:text-slate-800 md:text-xl md:p-6">
+                <span class="lang-es">Creación de páginas web estáticas, simples y elegantes, como biografias profesionales o paginas de aterrizaje</span>
+                <span class="lang-en">Development of static web pages, simple and elegant, such as work biographies or landing pages</span>
+              </p>
+            </li>
+            <li class="md:bg-slate-100 md:rounded-2xl md:shadow-2xl shadow-slate-900 md:hover:scale-105 transition">
+              <h1 class="text-2xl sm:text-3xl lg:text-2xl font-semibold pb-4 md:w-full md:p-4 md:bg-slate-900 md:text-slate-100 md:rounded-t-2xl">
+                <span class="lang-es">Sitios Web</span>
+                <span class="lang-en">Websites</span>
+              </h1>
+              <p class="text-slate-600 sm:text-lg md:text-slate-600  md:text-xl md:p-6">
+                <span class="lang-es">Desarrollo de sitios web estáticos de múltiples páginas adaptados a las necesidades del cliente</span>
+                <span class="lang-en">Development of static multi-page websites, customized according to the client's needs</span>
+              </p>
+            </li>
+            <li class="md:bg-slate-100 md:rounded-2xl md:shadow-2xl shadow-slate-900 md:hover:scale-105 transition">
+              <h1 class="text-2xl sm:text-3xl lg:text-2xl font-semibold pb-4 md:w-full md:p-4 md:bg-slate-900 md:text-slate-100 md:rounded-t-2xl">
+                <span class="lang-es">Aplicaciones Web</span>
+                <span class="lang-en">Web Apps</span>
+              </h1>
+              <p class="text-slate-600 sm:text-lg md:text-slate-600  md:text-xl md:p-6">
+                <span class="lang-es">Desarrollo de aplicaciones web completas adaptadas a las necesidades específicas del cliente, incluyendo características dinámicas e interacciones de usuario, usando tecnologias populares como Webflow y Wordpress</span>
+                <span class="lang-en">Development of complete web applications, customized according to the client's specific needs, including dynamic features and user interactions, using popular technologies like Webflow and Wordpress</span>
+              </p>
+            </li>
+          </ul>
+        </div>
+        <div class="space-y-6 sm:space-y-10">
+          <h1 class="text-center text-4xl font-semibold sm:text-5xl">
+            <span class="lang-es">Productos</span>
+            <span class="lang-en hidden">Products</span>
+          </h1>
+          <p class="text-lg sm:text-xl md:text-2xl text-center text-slate-600"><span class="lang-es">Infórmate sobre algunos de los productos que podemos ofrecerte</span>
+          <span class="lang-en">Learn about some of the products we offer</span></p>
+          <ul class="list-disc marker:text-2xl space-y-6 pl-4 sm:space-y-10 md:list-none md:grid md:grid-cols-2 md:gap-6 md:p-4 md:space-x-4 md:space-y-4">
+            <li class="md:bg-slate-100 md:rounded-2xl md:shadow-2xl shadow-slate-900 md:hover:scale-105 transition">
+              <h1 class="text-2xl sm:text-3xl lg:text-2xl font-semibold pb-4 md:w-full md:p-4 md:bg-slate-900 md:text-slate-100 md:rounded-t-2xl">
+                <span class="lang-es">Páginas para Restaurantes</span>
+                <span class="lang-en">Restaurant Pages</span>
+              </h1>
+              <div class="text-slate-600 sm:text-lg md:text-slate-800 md:text-xl md:p-8">
+                <span class="lang-es space-y-6">
+                  <p>Una página web sencilla para restaurantes, cafeterías y otros lugares de comida para aumentar su visibilidad en la web y proporcionar información sobre su ubicación, horarios, reservas, etc. Incluye:</p>
+                  <ol class="pl-4 space-y-2 list-decimal marker:text-base marker:font-semibold marker:text-slate-900">
+                    <li>Una breve descripción del local, fotos incluidas</li>
+                    <li>Una sección para la información importante, tal como la ubicación del local, horario de trabajo e información de contacto</li>
+                    <li>Un menú digital de los productos ofrecidos</li>
+                  </ol>
+                </span>
+                <span class="lang-en space-y-6">
+                  <p>A simple webpage for food restaurants, cafes, and other food venues to boost their visibility on the web and provide information about their location, hours, reservations, etc. Includes:</p>
+                  <ol class="pl-4 space-y-2 list-decimal marker:text-base marker:font-semibold marker:text-slate-900">
+                    <li>A brief description of the establishment, photos included</li>
+                    <li>A section for important information, such as the location of the establishment, working hours, and contact information</li>
+                    <li>A digital menu of the products offered</li>
+                  </ol>
+                </span>
+              </div>
+            </li>
+            <li class="md:bg-slate-100 md:rounded-2xl md:shadow-2xl shadow-slate-900 md:hover:scale-105 transition">
+              <h1 class="text-2xl sm:text-3xl lg:text-2xl font-semibold pb-4 md:w-full md:p-4 md:bg-slate-900 md:text-slate-100 md:rounded-t-2xl">
+                <span class="lang-es">Páginas de Aterrizaje</span>
+                <span class="lang-en">Landing Pages</span>
+              </h1>
+              <div class="text-slate-600 sm:text-lg md:text-slate-600  md:text-xl md:p-8">
+                <span class="lang-es space-y-6">
+                  <p>Una página para darte a conocer, enfocada en convertir a visitantes en potenciales empleadores o compradores. Incluye:</p>
+                  <ol class="pl-4 space-y-2 list-decimal marker:text-base marker:font-semibold marker:text-slate-900">
+                    <li>Una sección de inicio con el nombre de la empresa o producto, y una frase atractiva</li>
+                    <li>Una descripción detallada de el producto promocionado</li>
+                    <li>Un formulario de contacto con una llamada a la acción</li>
+                    <li>Una sección para dar a conocer los testimonios de previos compradores o clientes satisfechos</li>
+                  </ol>
+                </span>
+                <span class="lang-en space-y-6">
+                  <p>A page to introduce yourself, focused on converting visitors into potential employers or buyers. Includes:</p>
+                  <ol class="pl-4 space-y-2 list-decimal marker:text-base marker:font-semibold marker:text-slate-900">
+                    <li>A homepage section with the name of the company or product, and an attractive phrase.</li>
+                    <li>A detailed description of the promoted product.</li>
+                    <li>A contact form with a call to action.</li>
+                    <li>A section to showcase testimonials from previous buyers or satisfied clients.</li>
+                  </ol>
+                </span>
+              </div>
+            </li>
+            <li class="md:bg-slate-100 md:rounded-2xl md:shadow-2xl shadow-slate-900 md:hover:scale-105 transition">
+              <h1 class="text-2xl sm:text-3xl lg:text-2xl font-semibold pb-4 md:w-full md:p-4 md:bg-slate-900 md:text-slate-100 md:rounded-t-2xl">
+                <span class="lang-es">Biografías Profesionales</span>
+                <span class="lang-en">Work Biographies</span>
+              </h1>
+              <div class="text-slate-600 sm:text-lg md:text-slate-600  md:text-xl md:p-8">
+                <span class="lang-es space-y-6">
+                  <p>Una página diseñada como carta de presentación o currículum vitae. Incluye</p>
+                  <ol class="pl-4 space-y-2 list-decimal marker:text-base marker:font-semibold marker:text-slate-900">
+                    <li>Una introducción personal, con foto incluida</li>
+                    <li>Una descripción de tus habilidades y experiencias de trabajo</li>
+                    <li>Referencias de empleadores satisfechos</li>
+                    <li>Portafolio de trabajos con algunos de tus proyectos más destacados</li>
+                  </ol>
+                </span>
+                <span class="lang-en space-y-6">
+                  <p>A page designed to serve as a bussiness card or CV. Includes</p>
+                  <ol class="pl-4 space-y-2 list-decimal marker:text-base marker:font-semibold marker:text-slate-900">
+                    <li>A personal introduction, photo included</li>
+                    <li>A description of your skills and work experiences</li>
+                    <li>References from previous employers</li>
+                    <li>A work portfolio with some of your most importat projects</li>
+                  </ol>
+                </span>
+              </div>
+            </li>
+            <li class="md:bg-slate-100 md:rounded-2xl md:shadow-2xl shadow-slate-900 md:hover:scale-105 transition">
+              <h1 class="text-2xl sm:text-3xl lg:text-2xl font-semibold pb-4 md:w-full md:p-4 md:bg-slate-900 md:text-slate-100 md:rounded-t-2xl">
+                <span class="lang-es">Catálogos de Productos</span>
+                <span class="lang-en">Product Catalogues</span>
+              </h1>
+              <div class="text-slate-600 sm:text-lg md:text-slate-600  md:text-xl md:p-8">
+                <span class="lang-es space-y-6">
+                  <p>Un lugar para poner en exhibición tus productos estrella e información de venta. Incluye</p>
+                  <ol class="pl-4 space-y-2 list-decimal marker:text-base marker:font-semibold marker:text-slate-900">
+                    <li>Una lista de los productos en venta ordenados por categorías</li>
+                    <li>Una sección para resaltar tus productos estrella u ofertas especiales</li>
+                    <li>Una sección para la información de tu negocio</li>
+                  </ol>
+                </span>
+                <span class="lang-en space-y-6">
+                  <p>A place to showcase your star products and provide information about your business. Includes</p>
+                  <ol class="pl-4 space-y-2 list-decimal marker:text-base marker:font-semibold marker:text-slate-900">
+                    <li>A list of products, sorted by categories</li>
+                    <li>A section to highlight your best products or special offers</li>
+                    <li>A section for your business information</li>
+                  </ol>
+                </span>
+              </div>
+            </li>
+          </ul>
+        </div>
+        <div class="space-y-6 sm:space-y-10">
+          <h1 class="text-center text-4xl font-semibold sm:text-5xl">
+            <span class="lang-es">Servicios Adicionales</span>
+            <span class="lang-en hidden">Other Services</span>
+          </h1>
+          <p class="text-lg sm:text-xl md:text-2xl text-center text-slate-600"><span class="lang-es">Ademas de estos productos, ofrecemos los siguientes servicios</span>
+          <span class="lang-en">Beside these products, we offer the following services</span></p>
+          <ul class="list-disc marker:text-2xl space-y-6 pl-4 sm:space-y-10 md:list-none md:grid md:grid-cols-2 md:space-y-0 md:gap-6 md:p-4 md:space-x-8">
+            <li class="md:bg-slate-100 md:rounded-2xl md:shadow-2xl shadow-slate-900 md:hover:scale-105 transition">
+              <h1 class="text-2xl sm:text-3xl lg:text-2xl font-semibold pb-4 md:w-full md:p-4 md:bg-slate-900 md:text-slate-100 md:rounded-t-2xl">
+                <span class="lang-es">Mantenimiento</span>
+                <span class="lang-en">Mantainance</span>
+              </h1>
+              <p class="text-slate-600 sm:text-lg md:text-slate-600  md:text-xl md:p-6">
+                <span class="lang-es">Actualización tanto del contenido como de la tecnología de nuestros sitios por una tarifa mensual</span>
+                <span class="lang-en">Updating both the content and the technology used in the our sites for a monthly fee</span>
+              </p>
+            </li>
+            <li class="md:bg-slate-100 md:rounded-2xl md:shadow-2xl shadow-slate-900 md:hover:scale-105 transition">
+              <h1 class="text-2xl sm:text-3xl lg:text-2xl font-semibold pb-4 md:w-full md:p-4 md:bg-slate-900 md:text-slate-100 md:rounded-t-2xl">
+                <span class="lang-es">Rediseño y Migración</span>
+                <span class="lang-en">Redesign and Migration</span>
+              </h1>
+              <p class="text-slate-600 sm:text-lg md:text-slate-600  md:text-xl md:p-6">
+                <span class="lang-es">Rediseño del sitio deseado con un aspecto moderno, o recreación del mismo utilizando mejores tecnologías</span>
+                <span class="lang-en">Redesigning the desired site with a modern feel, or recreating it using better technologies</span>
+              </p>
+            </li>
+          </ul>
+        </div>
+        <div class="space-y-6 sm:space-y-10">
+          <h1 class="text-center text-4xl font-semibold sm:text-5xl">
+            <span class="lang-es">Características</span>
+            <span class="lang-en hidden">Features</span>
+          </h1>
+          <p class="text-lg sm:text-xl md:text-2xl text-center text-slate-600"><span class="lang-es">Todos nuestros servicios cuentan con las siguientes características</span>
+          <span class="lang-en">All of our services include the following features</span></p>
+        </div>
+        <ul class="list-disc marker:text-2xl space-y-6 pl-4 sm:space-y-10 md:list-none md:grid md:grid-cols-3 md:space-y-0 md:gap-6 md:p-4 md:space-x-4">
+          <li class="md:bg-slate-100 md:rounded-2xl md:shadow-2xl shadow-slate-900 md:hover:scale-105 transition">
+            <h1 class="text-2xl sm:text-3xl lg:text-2xl font-semibold pb-4 md:w-full md:p-6 md:bg-slate-900 md:text-slate-100 md:rounded-t-2xl">
+              <span class="lang-es">Diseño Adaptable</span>
+              <span class="lang-en">Responsive Design</span>
+            </h1>
+            <p class="text-slate-600 sm:text-lg md:text-slate-600  md:text-xl md:p-6">
+              <span class="lang-es">Sitios atractivos para escritorio, tablets y teléfonos, ajustándose automáticamente a cualquier pantalla para visibilidad óptima</span>
+              <span class="lang-en">Creation of attractive sites for desktop, tablets, and phones, automatically adapting to any screen to ensure optimal visibility</span>
+            </p>
+          </li>
+          <li class="md:bg-slate-100 md:rounded-2xl md:shadow-2xl shadow-slate-900 md:hover:scale-105 transition">
+            <h1 class="text-2xl sm:text-3xl lg:text-2xl font-semibold pb-4 md:w-full md:p-6 md:bg-slate-900 md:text-slate-100 md:rounded-t-2xl">
+              <span class="lang-es">Estilo Moderno</span>
+              <span class="lang-en">Modern Styling</span>
+            </h1>
+            <p class="text-slate-600 sm:text-lg md:text-slate-600  md:text-xl md:p-6">
+              <span class="lang-es">Se aplican técnicas de diseño contemporáneo para garantizar que los sitios web no solo sean visualmente atractivos, sino también funcionales y fáciles de navegar</span>
+              <span class="lang-en">Contemporary design techniques are applied to ensure that websites are not only visually appealing but also functional and easy to navigate</span>
+            </p>
+          </li>
+          <li class="md:bg-slate-100 md:rounded-2xl md:shadow-2xl shadow-slate-900 md:hover:scale-105 transition">
+            <h1 class="text-2xl sm:text-3xl lg:text-2xl font-semibold pb-4 md:w-full md:p-4 md:bg-slate-900 md:text-slate-100 md:rounded-t-2xl">
+              <span class="lang-es">SEO Básico</span>
+              <span class="lang-en">Basic SEO</span>
+            </h1>
+            <p class="text-slate-600 sm:text-lg md:text-slate-600  md:text-xl md:p-4">
+              <span class="lang-es">Se emplean técnicas de Optimización para Motores de Búsqueda (SEO) para garantizar la visibilidad de los sitios en los motores de búsqueda más populares</span>
+              <span class="lang-en">Search Engine Optimization (SEO) techniques are employed to ensure the visibility of sites in popular search engines</span>
+            </p>
+          </li>
+        </ul>
+      </section>
+
+      <!-- Portfolio/Gallery -->
+      <section class="even:bg-slate-200 p-8 space-y-14 sm:space-y-20 sm:p-16 opacity-0 animated" id="portfolio">
+        <div class="space-y-6">
+          <h1 class="text-center text-4xl font-semibold sm:text-5xl">
+            <span class="lang-es">Galeria</span>
+            <span class="lang-en hidden">Gallery</span>
+          </h1>
+          <p class="text-lg text-slate-600 sm:text-xl md:text-2xl text-center">
+            <span class="lang-es">Observa algunas de las plantillas de LineForge</span>
+            <span class="lang-en hidden">Have a look at some of our standard templates</span>
+          </p>
+        </div>
+
+        <div class="max-w-2xl mx-auto mt-10 relative overflow-hidden">
+          <div class="carousel-inner flex">
+              <div class="carousel-item min-w-full">
+                  <img src="./images/img-1.png" alt="Image 1">
+              </div>
+              <div class="carousel-item min-w-full">
+                  <img src="./images/img-2.png" alt="Image 2">
+              </div>
+              <div class="carousel-item min-w-full">
+                  <img src="./images/img-3.png" alt="Image 3">
+              </div>
+          </div>
+          <button class="absolute top-1/2 left-4 transform -translate-y-1/2 bg-white rounded-full shadow p-2" onclick="prevSlide()">
+              &#10094; <!-- Left Arrow -->
+          </button>
+          <button class="absolute top-1/2 right-4 transform -translate-y-1/2 bg-white rounded-full shadow p-2" onclick="nextSlide()">
+              &#10095; <!-- Right Arrow -->
+          </button>
+      </div>
+  
+      
+
+      </section>
+
+      <!-- Contact -->
+      <section class="even:bg-slate-200 p-12 space-y-8 sm:p-16  opacity-0 animated" id="contact">
+        <div class="space-y-4 sm:space-y-6">
+          <h1 class="text-center text-4xl font-semibold sm:text-5xl">
+            <span class="lang-es">Contáctanos!</span>
+            <span class="lang-en hidden">Contact us</span>
+          </h1>
+          <div class="lg:space-y-2">
+            <p class="text-lg text-slate-600 sm:text-xl md:text-2xl text-center">
+              <span class="lang-es">Estas interesado en alguno de estos servicios? Envíanos un correo!</span>
+              <span class="lang-en hidden">Interested in hiring our services? Send us a mail!</span>
+            </p>
+          </div>
+        </div>
+        <div class="">
+          <form class="text-lg font-semibold space-y-2 sm:text-xl sm:space-y-4" id="contact-form">
+            <div class="space-y-1 sm:space-y-2">
+              <h1 class="sm:text-xl lg:text-2xl">
+                <span class="lang-es">Nombre:</span>
+                <span class="lang-en hidden">Name:</span>
+              </h1>
+              <input class="w-full rounded-md focus:outline-none focus:ring-2 focus:ring-emerald-600 p-2" type="text" name="sender-name" id="gmail-sender-name" required>
+            </div>
+            <div class="space-y-1 sm:space-y-2">
+              <h1 class="sm:text-xl lg:text-2xl">
+                <span class="lang-es">Tema:</span>
+                <span class="lang-en hidden">Subject:</span>
+              </h1>
+              <input class="w-full rounded-md focus:outline-none focus:ring-2 focus:ring-emerald-600 p-2" type="text" name="about" id="gmail-about" required>
+            </div>
+            <div class="space-y-1 sm:space-y-2">
+              <h1 class="sm:text-xl lg:text-2xl">
+                <span class="lang-es">Mensaje:</span>
+                <span class="lang-en hidden">Message:</span>
+              </h1>
+              <textarea class="w-full rounded-md focus:outline-none focus:ring-2 focus:ring-emerald-600 lg:h-28 p-2" name="content" id="gmail-content" required></textarea>
+            </div>
+            <div class="grid place-items-center">
+              <button type="submit" class="bg-teal-600 text-xl px-8 py-4 rounded-2xl text-slate-100 font-bold mt-4 hover:bg-teal-700 focus:outline-none focus:ring-2 focus:ring-teal-700 focus:hover:ring-teal-800 active:bg-teal-800 active:focus:ring-teal-900 transition md:text-2xl md:px-12 md:py-6 lg:text-xl lg:px-12 lg:py-6">
+                <span class="lang-es">Contactanos!</span>
+                <span class="lang-en">Contact us!</span>
+              </button>
+            </div>
+          </form>
+        </div>
+      </section>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="bg-slate-900 text-slate-300 p-4 grid grid-cols-1 items-center">
+      <p class="text-lg text-center">© 2025 LineForge. 
+        <span class="lang-es">Todos los derechos reservados</span>
+        <span class="lang-en hidden">All rights reserved.</span>
+      </p>
+      <div class="flex flex-row items-center justify-end gap-4 hidden">
+        <!-- Twitter SVG -->
+        <a href="#">
+          <svg class="w-8 fill-sky-400 pr-1" viewBox="0 -2 20 20" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+            <g id="Page-1" stroke="none" stroke-width="1" fill-rule="evenodd">
+              <g id="Dribbble-Light-Preview" transform="translate(-60.000000, -7521.000000)">
+                <g id="icons" transform="translate(56.000000, 160.000000)">
+                  <path d="M10.29,7377 C17.837,7377 21.965,7370.84365 21.965,7365.50546 C21.965,7365.33021 21.965,7365.15595 21.953,7364.98267 C22.756,7364.41163 23.449,7363.70276 24,7362.8915 C23.252,7363.21837 22.457,7363.433 21.644,7363.52751 C22.5,7363.02244 23.141,7362.2289 23.448,7361.2926 C22.642,7361.76321 21.761,7362.095 20.842,7362.27321 C19.288,7360.64674 16.689,7360.56798 15.036,7362.09796 C13.971,7363.08447 13.518,7364.55538 13.849,7365.95835 C10.55,7365.79492 7.476,7364.261 5.392,7361.73762 C4.303,7363.58363 4.86,7365.94457 6.663,7367.12996 C6.01,7367.11125 5.371,7366.93797 4.8,7366.62489 L4.8,7366.67608 C4.801,7368.5989 6.178,7370.2549 8.092,7370.63591 C7.488,7370.79836 6.854,7370.82199 6.24,7370.70483 C6.777,7372.35099 8.318,7373.47829 10.073,7373.51078 C8.62,7374.63513 6.825,7375.24554 4.977,7375.24358 C4.651,7375.24259 4.325,7375.22388 4,7375.18549 C5.877,7376.37088 8.06,7377 10.29,7376.99705"></path>
+                </g>
+              </g>
+            </g>
+          </svg>
+        </a>
+        <!-- Whatsapp SVG -->
+        <a href="#">
+          <svg class=" w-8 fill-teal-600" viewBox="0 0 20 20" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+            <g id="Page-1" stroke="none" stroke-width="1" fill-rule="evenodd">
+              <g id="Dribbble-Light-Preview" transform="translate(-300.000000, -7599.000000)">
+                <g id="icons" transform="translate(56.000000, 160.000000)">
+                  <path d="M259.821,7453.12124 C259.58,7453.80344 258.622,7454.36761 257.858,7454.53266 C257.335,7454.64369 256.653,7454.73172 254.355,7453.77943 C251.774,7452.71011 248.19,7448.90097 248.19,7446.36621 C248.19,7445.07582 248.934,7443.57337 250.235,7443.57337 C250.861,7443.57337 250.999,7443.58538 251.205,7444.07952 C251.446,7444.6617 252.034,7446.09613 252.104,7446.24317 C252.393,7446.84635 251.81,7447.19946 251.387,7447.72462 C251.252,7447.88266 251.099,7448.05372 251.27,7448.3478 C251.44,7448.63589 252.028,7449.59418 252.892,7450.36341 C254.008,7451.35771 254.913,7451.6748 255.237,7451.80984 C255.478,7451.90987 255.766,7451.88687 255.942,7451.69881 C256.165,7451.45774 256.442,7451.05762 256.724,7450.6635 C256.923,7450.38141 257.176,7450.3464 257.441,7450.44643 C257.62,7450.50845 259.895,7451.56477 259.991,7451.73382 C260.062,7451.85686 260.062,7452.43903 259.821,7453.12124 M254.002,7439 L253.997,7439 L253.997,7439 C248.484,7439 244,7443.48535 244,7449 C244,7451.18666 244.705,7453.21526 245.904,7454.86076 L244.658,7458.57687 L248.501,7457.3485 C250.082,7458.39482 251.969,7459 254.002,7459 C259.515,7459 264,7454.51465 264,7449 C264,7443.48535 259.515,7439 254.002,7439"></path>
+                </g>
+              </g>
+            </g>
+          </svg>
+        </a>
+        <!-- Telegram SVG -->
+        <a href="#">
+          <svg class="w-10 fill-sky-600" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 24 24" xml:space="preserve">
+            <style type="text/css">
+              .st0{fill:none;}
+            </style>
+            <path d="M12,2C6.5,2,2,6.5,2,12s4.5,10,10,10s10-4.5,10-10S17.5,2,12,2z M16.9,8.1l-1.7,8.2c-0.1,0.6-0.5,0.7-0.9,0.4l-2.6-2
+              c-0.6,0.6-1.2,1.1-1.3,1.3c-0.2,0.1-0.3,0.3-0.5,0.3c-0.3,0-0.3-0.2-0.4-0.4l-0.9-3L5.9,12c-0.6-0.2-0.6-0.6,0.1-0.9l10.2-3.9
+              C16.6,7.1,17.1,7.3,16.9,8.1z M14.5,9l-5.7,3.6l0.9,3l0.2-2l4.9-4.4C15.1,8.9,14.9,8.9,14.5,9z"/>
+            <rect class="st0" width="24" height="24"/>
+          </svg>
+        </a>
+      </div>
+    </footer>
+
+    <button id="goTopBtn" class="fixed size-12 bottom-4 right-4 bg-teal-600 text-white p-2 rounded-xl shadow-lg hidden">
+      <div>↑</div>
+    </button>
+
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="app.js"></script>
+  </body> 
+  </html>
